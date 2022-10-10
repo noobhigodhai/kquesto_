@@ -1,0 +1,58 @@
+extends layout/layout.pug
+block content
+   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+   .outercontainer
+      .ImageandText(style="display:flex;flex-direction:column;")
+         .image
+            img.logof.d-inline-block.align-top(src='images/logof.png')
+         #belowlogotext Community For Learners
+      
+      .innercontainer
+         
+         form#registerForm(method="post" )
+            .error(style="color:red;margin-left:60px;")
+            .form-group
+               label(for='email')
+               input#email.form-control( name="email", type='email', placeholder='Email')
+            .form-group
+               label(for='password') 
+               input#password.form-control( name="password" ,type='password' , placeholder='Password')
+
+            button#submit-btn.btn.btn-primary(type='submit',style="background-color:#1877f2;") SignUp
+            a(href="/auth/google")
+               .uploadphoto
+                  .photo
+                     image#googleloginimage(src="images/search.png")
+                  .textgoogle Google 
+            a(href="/register")
+               .text(style="margin-left:40px;margin-top:30px;font-size:15px;") Create an account? SignUp
+   
+   script.
+      var form = document.getElementById("registerForm")
+     
+      form.addEventListener('submit', (event) => {
+      // stop form submission
+      event.preventDefault();
+      var email = document.getElementById("email").value
+      var password =document.getElementById("password").value
+      var payload={
+      email: email,
+      password: password,
+      }
+      console.log(payload)
+      $.post("/api/users/normallogin" ,{email:email ,password:password} ,(data)=>{
+      console.log(data)
+      if(data!="user not found !!!"){
+      window.location = "https://kquesto.com/";
+      //- res.status(200).render("home")
+
+      //- $(".outercontainer").html(data)
+      }
+      else{
+
+         $(".error").html(data )
+      }
+
+      
+      })
+      });

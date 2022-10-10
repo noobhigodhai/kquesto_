@@ -1,0 +1,98 @@
+extends layout/layout.pug
+block content
+   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+   .outercontainer
+      .ImageandText(style="display:flex;flex-direction:column;")
+         .image
+            img.logof.d-inline-block.align-top(src='images/logof.png')
+         .text(style="margin-left:10px;margin-top:10px;font-size:20px;font-color:#000;") Community For Learners
+      .innercontainergoogle
+         form#registerFormgooglemiddlelogin
+            select#profession.form-select.form-select-lg.mb-3(  aria-label='form-select-lg example')
+               option( Selected  Value=3) Select Profession
+               option(   Value=0) Student
+               option(value=1) College Student
+               option(value=2) Professor
+            .form-group
+               label(for='email')
+               input#collegeName.form-control( name="email", type='text', placeholder='College Name' )
+            select#community.form-select.form-select-lg.mb-3(  aria-label='form-select-lg example')
+               option(selected Value=0) JEE(Mains+Advance)
+               
+               
+
+            button#submit-btn.btn.btn-primary(type='submit',style="background-color:#3EC70B;") Continue
+   
+   script.
+      var profession
+      var name='!{name}'
+      var email='!{email}'
+      
+      var form = document.getElementById("registerFormgooglemiddlelogin")
+      
+      
+    
+      
+
+   
+      document.querySelector("#profession").addEventListener("change" , function(){
+           var professionvalue = document.getElementById("profession").value;
+             var profession = document.getElementById("profession");
+           var options = profession.querySelectorAll("option");
+   
+      if(this.value!=0)
+      {
+      
+          $("#collegeName").css("display" , "block")
+           profession = document.getElementById("profession").value;
+           
+            form.addEventListener('submit', (event) => {
+               event.preventDefault();
+            profession = document.getElementById("profession").value;
+            var collegeName = document.getElementById("collegeName").value;
+            var community = document.getElementById("community").value;
+                  $.post("/api/users/googlelogin" , {name:name , email:email ,profession:profession ,collegeName:collegeName , community:community  } ,function(data){
+
+                                     $.get("/api/users/sendmailboxnewUser"  ,{ name:name , email:email}  ,(data)=>{
+       
+       
+       })
+
+                        window.location = "https://kquesto.com/";
+                  });
+                  
+                  
+           
+                  }); 
+                  
+                  
+         
+
+         }
+      else if(this.value==0)
+      {
+          
+           profession = document.getElementById("profession").value;
+           
+          form.addEventListener('submit', (event) => {
+               event.preventDefault();
+            profession = document.getElementById("profession").value;
+            var collegeName = "student";
+            var community = document.getElementById("community").value;
+            console.log("ye to hogaya uske satha bhi 1")
+                  $.post("/api/users/googlelogin" , {name:name , email:email ,profession:profession ,collegeName:collegeName , community:community  } ,function(data){
+                  
+                    $.get("/api/users/sendmailboxnewUser"  ,{ name:name , email:email} ,(data)=>{
+       
+       
+       })
+                   
+                        window.location = "https://kquesto.com/";
+                  });  
+                 
+        
+           }); 
+         }
+        
+         });
+         

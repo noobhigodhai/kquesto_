@@ -1,0 +1,683 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color:#efefef;
+  }
+  body{
+    background-color:#fff;  
+  }
+a.navbar-brand {
+    flex: auto;
+}
+-webkit-scrollbar {
+    width: 1px;
+}
+
+#exampleInputEmail1{
+width: 50%;
+}
+#exampleInputPassword1{
+width: 50%;
+}
+.form-control{
+width: 50%;
+}
+
+
+/* .outercontainer{
+background-color:#3ea6ff91; 
+margin-left:20%;
+ margin-right:20%;
+  height:550px;
+  margin-top:0px;
+} */
+
+
+.btno{
+
+    margin: 0px 0px;
+    width: 100px;
+}
+
+.form-group{
+
+    margin-left: 300px;
+    margin-top: 10px;
+}
+#submit-btn{
+
+    margin-left: 300px;
+    margin-top:20px;
+    width: 33.6%;
+}
+
+
+.logincontainer{
+display:flex; 
+flex-direction:column;
+ width:300px;
+ justify-content:space-around;
+ height:500px;
+ margin-left:60%;
+ margin-top:50px;
+
+
+}
+
+
+#password{
+
+    width: 50%;
+}
+
+#passwordConf{
+    width: 50%;
+}
+
+
+#hemloes{
+    display:flex; 
+    flex-direction:column;
+     width:300px;
+     justify-content:space-around;
+     height:500px;
+     margin-left:60%;
+     margin-top:50px;  
+}
+
+.innerMentorContainer {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+     /* for Firefox */
+   
+}
+
+
+
+.outerContainer{
+
+    background-color:#efefef; 
+height: 100vh;
+width: 100vw;
+padding-top: 10px;
+padding-left: 10px;
+padding-right: 100px;
+overflow-y: scroll;
+overflow-x: hidden;
+
+}
+.chatouterContainer{
+
+background-color:#efefef; 
+height: 100vh;
+width: 100vw;
+padding-top: 10px;
+padding-left: 10px;
+padding-right: 100px;
+overflow-y: scroll;
+overflow-x: hidden;
+
+}
+
+.ProfileouterContainer{
+
+    background-color:#efefef; 
+height: 100vh;
+width: 100vw;
+padding-top: 0px;
+padding-left: 350px;
+padding-right: 100px;
+overflow-y: scroll;
+overflow-x: hidden;
+
+}
+
+::placeholder
+{
+     font-size: 20px;
+    
+    }
+
+.innerContainer{
+
+    background-color:#efefef; 
+height: 100vh;
+width: 100%;
+padding-top: 5px;
+padding-left: 150px;
+padding-right: 100px;
+}
+.chatinnerContainer{
+
+    background-color:#efefef; 
+height: 100vh;
+width: 100%;
+padding-top: 5px;
+padding-left: 0px;
+
+}
+
+.ProfileinnerContainer{
+
+    background-color:#efefef; 
+height: 100%;
+width: 100%;
+padding-top: 0px;
+padding-left: 0px;
+padding-right: 100px;
+}
+.innerMentorContainer ::-webkit-scrollbar 
+{
+    width: 0px;
+}
+.innerMentorContainer{
+
+background-color: #fff;
+height: 300px;
+overflow-y: scroll;
+overflow-x: hidden;
+display: flex;
+flex-direction: column;
+-webkit-overflow-scrolling: touch;
+
+
+}
+.innerGroupContainer{
+
+    background-color: #fff;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 60px;
+    
+
+
+}
+
+
+.card{
+
+margin-top:10px ;
+margin-left:10px;
+margin-right:10px;
+
+width:100% ;
+flex: 0 0 auto;
+
+
+}
+
+
+.image{
+    padding-left: 50px;
+    padding-top: 10px;
+
+}
+.PostImage{
+    padding-left: 10px;
+    padding-top: 10px;
+
+}
+
+.card-img-top{
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  
+    
+}
+
+.card-title{
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.MentorName{
+     padding-top:0px;
+     padding-left: 0px;
+     font-weight: 900;
+}
+
+.MentorCollegeName{
+     padding-top:0px;
+     padding-left:0px;
+}
+.PostMentorName {
+    padding-top: 8px;
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+.PostMentorCollegeName {
+    padding-top: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.buttons{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.PostButtons{
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+}
+
+.postCard {
+    margin-top: 0px;
+    margin-left: 0px;
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    border-style:solid; 
+    border-width:1px;
+     border-color:#aaa;
+     overflow:visible;
+     overflow-wrap: anywhere;
+    
+}
+.chatcard {
+    margin-top: 0px;
+    margin-left: 0px;
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    border-style:solid; 
+    border-width:1px;
+     border-color:#aaa;
+     overflow:visible;
+     overflow-wrap: anywhere;
+    
+}
+.Profilecover {
+    margin-top: 0px;
+    margin-left: 0px;
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 12px;
+     
+}
+
+.profilepic{
+
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 120px;
+   
+  
+
+}
+.innerLeftContainer{
+    border-radius: 20px;
+    margin-top: 10px;
+    border-style:solid; 
+    border-width:1px;
+     border-color:#aaa;
+
+}
+
+.PostContent{
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+.PostPicContent{
+
+    padding-left: 0px;
+    padding-right: 30px;
+    padding-top: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+
+.comment-like {
+    background-color: #fff;
+    height: 50px;
+    width: 95%;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: rgb(167 166 166 / 52%);
+}
+.comment{
+
+    background-color: #fff;
+    height: 50px;
+    width: 30%;
+    padding-left: 0px;
+    padding-top: 10px;
+    /* box-shadow: 0px 18px 41px 16px #8888 */
+    
+
+}
+.like{
+
+    background-color: #fff;
+    height: 50px;
+    width: 30%;
+    padding-left: 0px;
+    padding-top: 10px;
+    /* box-shadow: 0px 18px 41px 16px #8888 */
+    /* border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: rgb(167, 166, 166); */
+}
+.share{
+
+    background-color: #fff;
+    height: 50px;
+    width: 30%;
+    padding-left: 10px;
+    padding-top: 10px;
+    /* box-shadow: 0px 18px 41px 16px #8888 */
+    /* border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: rgb(167, 166, 166); */
+}
+
+
+.likeImage{
+
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+
+}
+.shareImage{
+
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+
+}
+.commentImage{
+
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+
+    
+}
+
+.owl-stage-outer{
+    margin-top: 100px;
+height:400px;
+width: 100%;
+}
+.owl-carousel{
+    margin-top: 100px;
+    margin-left: 230px;
+height:400px;
+width: 66%;
+
+}
+.owl-item .active{
+width: 350px;
+}
+
+.btn{
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 150px;
+    height: 30px;
+    
+}
+
+#registerForm{
+
+    margin-left: 200px;
+}
+#PostForm{
+
+    margin-left: 200px;
+}
+
+
+
+
+.uploadphoto{
+
+    width:40%;
+    height:50px;
+    background-color:#efefef;
+    margin-top:10px;
+    margin-left:200px;
+    border-radius:50px;
+    margin-bottom:50px;
+
+
+}
+.followers{
+    display:flex;
+    flex-direction:row;
+    margin-bottom:30px;
+    margin-top:20px;
+    
+}
+.following{
+    display:flex;
+    flex-direction:row;
+    margin-bottom:30px;
+}
+
+
+@media only screen and (max-width: 900px) {
+    body {
+      background-color: rgb(252, 1, 1);
+      
+
+    }
+
+
+    .innerdetailsContainer{
+
+       display: none;
+        
+        }
+    .photo{
+
+       display: none;
+        
+        }
+
+    .innerMentorContainer{
+
+       display: none;
+        
+        }
+    .uploadphoto{
+
+       display: none;
+        
+        }
+        
+    .innerGroupContainer{
+
+       display: none;
+        
+        }
+
+    .outerContainer{
+
+        background-color: #fff;
+        height: 100vh;
+        width: 100vw;
+        padding-top: 100px;
+        padding-left: 0px;
+        padding-right: 0px;
+        overflow-y: scroll;
+        
+        }
+        .form-group{
+
+            margin-left: 0px;
+            margin-top: 10px;
+        }
+
+        .comment {
+            background-color: #fff;
+            height: 50px;
+            width: 54%;
+            padding-left: 33px;
+            padding-top: 10px;
+            /* box-shadow: 0px 18px 41px 16px #8888; */
+        }
+        .share {
+            background-color: #fff;
+            height: 50px;
+            width: 34%;
+            padding-left: 6px;
+            padding-top: 10px;
+            /* box-shadow: 0px 18px 41px 16px #8888; */
+        }
+        .like {
+            background-color: #fff;
+            height: 50px;
+            width: 42%;
+            padding-left: -34px;
+            padding-top: 10px;
+            /* box-shadow: 0px 18px 41px 16px #8888; */
+        }
+        #registerForm {
+            margin-left: 83px;
+        }
+        #PostForm{
+
+            margin-left: 83px;
+        }
+        
+       
+        .postCard {
+            margin-top: 10px;
+            margin-left: 2px;
+            background-color: #fff;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 50px;
+            box-shadow: 24px 31px 77px -57px #888;
+        }
+        .innerContainer {
+            background-color: #fff;
+            height: 100vh;
+            width: 100%;
+            padding-top: 60px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .btn{
+
+            margin-left: 20px;
+        }
+        
+  }
+
+
+
+.mentorCard{
+
+display: flex;
+flex-direction: row;
+height: 60px;
+
+
+
+}
+
+.card-body{
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+.innerPostContainer {
+    
+    height: 100%;
+    width: 40%;
+    margin-top:10px; 
+}
+.chatinnerPostContainer {
+    
+    height: 100%;
+    width: 40%;
+    margin-top:10px; 
+}
+.innerProfileContainer {
+    
+    height: 100;
+    width: 70%;
+    margin-top:10px; 
+    background-color:#fff;
+}
+.innerdetailsContainer {
+    height: 100%;
+    margin-top:10px; 
+    background-color:#fff;
+    width:20%;
+    border-style:solid; 
+    border-width:1px;
+     border-color:#aaa;
+     border-radius: 20px;
+     display: flex;
+     flex-direction: column;
+
+}
+.uploadphoto{
+    margin-top: 10px;
+    border: 1px;
+    border-style: solid;
+    border-color: #aaa;
+    display: flex;
+    flex-direction: row;
+    cursor:pointer;
+    
+}
+
+.cover{
+
+    display:flex;
+    flex-direction:row;
+    display:flex;
+     height:300px;
+     background-image:url("/images/background.jpg");
+      flex-direction: row;
+      border-bottom-style: solid;
+      border-block-color: #aaa;
+      border-width: 2px;
+      opacity:1;
+      border-bottom-left-radius:20px;
+      border-bottom-right-radius:20px;
+
+}
+
+.ProfilepageImage{
+    margin-left: 370px;
+
+}

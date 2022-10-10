@@ -1,0 +1,1442 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color:#F6FBF4;
+  }
+.imagePreviewContainer{
+    display:none
+}
+  .postedByDate{
+      font-size: 10px;
+    color: grey;
+  }
+.postedByCollegeName {
+    color: grey;
+}
+  body{
+    background-color:#EEF1FF;
+    height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .navbar {
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    box-shadow: 10px 10px 10px -11px #aaa;
+}
+
+.burger{
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  display: none;
+  padding-top: 35px;
+  margin-left: 50px;
+}
+
+.line1{
+
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 6px;
+}
+.line2{
+
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 6px;
+}
+.line3{
+
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 6px;
+}
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 0px 0px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.nav-links li{
+
+  list-style: none;
+  
+}
+
+
+
+
+.nav-links{
+display: flex;
+flex-direction: row;
+margin-top: 30px;
+}
+#Kqlogo{
+
+  margin-left: 30px;
+  /* border-style: solid;
+  border-width: 2px;
+  border-color: black; */
+}
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  margin-left: 20%;
+  margin-top: 35px;
+  width: 500px;
+  border-radius: 0px;
+}
+::placeholder{
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+#navbarIcon {
+  margin-left: 20px;
+}
+
+.owl-stage-outer{
+  margin-top: 10px;
+height:fit-content !important;
+width: 80%;
+
+}
+
+.outer-caro{
+  height:fit-content;
+  padding-left:20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  width: 100%;
+  background-color:#F6FBF4;
+
+}
+.owl-loaded {
+  height:fit-content !important;
+}
+.owl-carousel{
+  margin-top: 10px;
+  padding-left: 30px;
+height:400px;
+width: 90%;
+
+
+}
+.owl-item .active{
+width: 350px !important;;
+}
+
+
+.owl-carousel .owl-item img {
+  display: block;
+  width: 38% !important;
+}
+
+.owl-item { width : 230px !important; }
+
+.btn:hover{
+
+  
+  
+  background-color: #74d8ce;
+}
+.btn{
+
+  
+  display: flex;
+  flex-direction: row;
+  width:70%;
+  height:30px;
+  padding-bottom: 15px;
+  justify-content: space-between;
+  color: #ffea00;
+  border-radius: 5px;
+}
+
+.control {
+  display: flex;
+  width: 80%;
+  margin-left: 20px;
+
+}
+
+.message{
+
+  border-right-color: black;
+  border-width: 1px;
+  border-radius: 0px;
+}
+.add{
+
+
+  border-radius: 0px;
+}
+
+/* .add {
+  border-radius: 0px;
+  width: 50px;
+  height: 50px;
+} */
+
+
+text{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.text {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 52px;
+}
+
+.name{
+  
+  font-size: 15px;
+  color: #595656;
+}
+
+
+.collegeName {
+  font-size: 20px;
+  color:black;
+  margin-left: 20px;
+}
+
+.card-img-top{
+    width: 90px;
+    height: 80px;
+    margin-left: 60px;
+  }
+
+  .card{
+    background-color: #fff;
+  }
+    .welcomeWrap{
+      background-color:#F4FCD9;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .outercontainer{
+      width: 100vw;
+      height: 100vh;
+      background-color:#EEF1FF;
+      padding-left: 0px;
+      padding-right: 0px;
+     margin-top: 0px;
+     overflow-y: visible;
+     overflow-wrap: anywhere;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+    .outerprofilecontainer{
+      width: 100%;
+      background-color:#F6FBF4;
+      margin-top: 0px;
+      padding-top: 40px;
+      padding-left: 300px;
+      padding-right: 300px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      
+    
+      justify-content: center;
+    }
+    .outerpostcontainer{
+      width: 100%;
+      background-color:#EEF1FF;
+      margin-top: 60px;
+      padding-top: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      overflow-y: visible;
+     overflow-wrap: anywhere;
+    }
+    .outerpostpagecontainer{
+      width: 100%;
+      background-color:#fbf4f4;
+      margin-top: 60px;
+      padding-top: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      overflow-y: visible;
+     overflow-wrap: anywhere;
+    }
+    .leftseparatePagePostContainer {
+      width: 500px;
+      background-color: #fff;
+      margin-right: 10px;
+      padding-top: 20px;
+      /* height: 500px; */
+  }
+    /* .leftContainer {
+   
+  } */
+    /* .leftContainer {
+   display: flex;
+   flex-direction: column;
+  } */
+    .leftUpperContainer {
+      width: 20%;
+      background-color: #FFF;
+      margin-right: 10px;
+      padding-top: 20px;
+      height: 400px;
+      /* display: flex; */
+      flex-direction: column;
+      display: block;
+      /* position: absolute;
+      margin-left: 190px; */
+  }
+
+
+  
+    .leftUpperContainermobile {
+      width: 20%;
+      background-color: #FFF;
+      margin-right: 10px;
+      padding-top: 20px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      /* position: absolute;
+      margin-left: 190px; */
+  }
+    
+    .leftUpperContainerMentorpage {
+      width: 60%;
+      background-color: #FFF;
+      margin-right: 10px;
+      padding-top: 20px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      /* position: absolute;
+      margin-left: 190px; */
+  }
+
+  .grpheadMentorPage{
+
+   padding-left:100px;
+   margin-top:50px;
+   font-style:bold;
+   justify-content:space-between;
+   width:100%;
+
+
+  }
+  
+    /* .middlleseparatePagePostContainer{
+      width: 30%;
+      background-color:rgb(0, 37, 248);
+      padding-left: 10px;
+      padding-right: 10px;
+
+    } */
+    .middlleContainer {
+      width: 32%;
+      background-color: FFF;
+      padding-left: 0px;
+      padding-right: 0px;
+      /* position: relative; */
+      /* margin-left: 490px; */
+  }
+    .rightseparatePagePostContainer{
+      width: 30%;
+      background-color: #fff;
+      margin-left: 10px;
+      text-align: center;
+      padding-top: 5px;
+      overflow:visible;
+      overflow-wrap: anywhere;
+      
+    }
+    .rightContainer {
+      width: 20%;
+      background-color: #FFF;
+      margin-left: 10px;
+      text-align: center;
+      padding-top: 10px;
+      overflow-y: visible;
+      overflow-wrap: anywhere;
+      height: 700px;
+      /* position: absolute;
+      margin-left: 960px; */
+  }
+
+    .groupOuterContainer{
+      padding-top: 10px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+        background-color:#fff;
+    }
+
+    .postpageContainer{
+      width: 100%;
+      background-color:#FFF;
+      
+      display: flex;
+      flex-direction: column;
+      overflow:visible;
+     overflow-wrap: anywhere;
+     margin-bottom: 0px;
+     margin-top: 20px;
+    }
+    .postContainer{
+      width: 100%;
+      background-color:#FFF;
+      
+      display: flex;
+      flex-direction: column;
+      overflow:visible;
+     overflow-wrap: anywhere;
+     margin-bottom: 5px;
+     margin-top: 0px;
+            border-style: solid;
+    border-color: gainsboro;
+     
+
+    }
+  .postFirstContainer{
+      width: 100%;
+      background-color:#FFF;
+      
+      display: flex;
+      flex-direction: column;
+      overflow:visible;
+     overflow-wrap: anywhere;
+     margin-bottom: 5px;
+     margin-top: 0px;
+            border-style: solid;
+    border-color: gainsboro;
+     
+
+    }
+
+    .postedByProfilePicPostPage {
+      height: 50px;
+      width: 50px;
+    }
+
+    .postedByProfilePiccommentPic {
+      height: 40px;
+      width: 40px;
+    }
+    .postedByProfilePic {
+      height: 150px;
+      width: 150px;
+    }
+
+
+
+    .postUpper{
+      height: 20%;
+      width: auto;
+      background-color: #fff;
+      display: flex;
+      flex-direction: row;
+      padding-left: 20px;
+      padding-top: 20px;
+
+    }
+    .postmiddle{
+      width: 100%;
+      background-color: #fff;
+      padding-left: 0px;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      padding-right: 0px;
+      display: flex;
+      overflow:visible;
+     overflow-wrap: anywhere;
+     /* overflow: scroll; */
+       flex-direction:column;
+        font-size:17px;
+     
+
+    }
+    .postmiddleText {
+      width: 100%;
+      background-color: #fff;
+      padding-left: 20px;
+      padding-top: 30px;
+      padding-bottom: 5px;
+      padding-right: 20px;
+      display: flex;
+      overflow: visible;
+      overflow-wrap: anywhere;
+      /* overflow: scroll; */
+  }
+
+.postmiddleInternship {
+      width: 100%;
+      background-color: #fff;
+      padding-left: 20px;
+      padding-top: 30px;
+      padding-bottom: 5px;
+      padding-right: 20px;
+      display: flex;
+      overflow: visible;
+      overflow-wrap: anywhere;
+      /* overflow: scroll; */
+  }
+  
+  .LikePostText{
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+    
+
+  }
+  .like{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 34px;
+    
+
+  }
+  .accessComments{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 21px;
+    
+
+  }
+  .sharepost{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+  
+
+  }
+    
+  .LikePost{
+   
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+
+  }
+  .commentPostText{
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+    
+
+  }
+    
+  .commentPost{
+   
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+
+  }
+
+  .postedByDate{
+      font-size: 10px;
+    color: grey;
+  }
+.postedByCollegeName {
+    color: grey;
+}
+  .gropuedescriptiontext{
+    font-size: 12px;
+    color:rgb(14, 14, 14)
+  }
+  .groupMemberNumbertext{
+    font-size: 12px;
+    color:#aaa;
+    
+  }
+  .groupdetails{
+
+    display:flex;
+    flex-direction:column;
+    margin-left: 10px;
+
+
+  }
+
+
+ 
+  /* .mentorName{
+    font-size: 12px;
+    color:#aaa;
+    margin-left: 20px;
+    
+  }
+  .mentorCollegeName{
+    font-size: 12px;
+    color:#aaa;
+    margin-left: 20px;
+    
+  } */
+  .messageIITians{
+    font-size: 12px;
+    color:#aaa;
+    margin-left: 50px;
+      width:40px;
+    
+  }
+
+
+  .postbottom {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 100%;
+    background-color: #fff;
+    border-top-style: solid;
+    border-color: #aaa;
+    border-spacing: 2px;
+    border-width: 1px;
+    margin-top: 10px;
+}
+    .postedByProfilePic{
+      border-radius: 50%;
+
+      
+    }
+    .postedByProfilePicImage{
+      border-radius: 50%;
+
+      
+    }
+    .commentedByProfilePic{
+      border-radius: 50%;
+
+      
+    }
+   .PostedBydetails{
+    display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+
+   }
+   #commentContent{
+
+    width:80%;
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
+    margin-top: 5px;
+    margin-left: 6px; 
+    
+ }
+   .commentContent{
+
+    width:80%;
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
+    margin-top: 5px;
+    margin-left: 6px; 
+    border-style: solid;
+    border-color: #aaaaaa80;
+    
+ }
+   .commentPostbtn{
+
+    
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
+    margin-top: 5px;
+    margin-left: 0px; 
+    height:34px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #aaa;
+    
+ }
+
+ .allComments{
+   display: "none";
+   width: 100%;
+   background-color: #fff;
+   padding-left: 60px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   padding-right: 20px;
+   display: flex;
+   flex-direction: row;
+   overflow:visible;
+  overflow-wrap: anywhere;
+
+ }
+ .commentToPostInner{
+   margin-top: 5px;
+   padding-left: 15px;
+   display:flex;
+   flex-direction:row;
+   width:100%;
+   overflow:visible;
+   overflow-wrap: anywhere;
+     display:none;
+
+ }
+.refreshcomments{
+ display:flex;
+ flex-direction:row;
+ margin-top:20px;
+ cursor:pointer;
+    display:none;
+}
+ .commentText{
+
+  background-color:#E8F9FD ;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow:visible;
+  overflow-wrap: anywhere;
+ }
+   .uploadPost{
+     display: flex;
+     flex-direction: row;
+     padding-top: 10px;
+     
+   }
+   .uploadPostText{
+     margin-left: 20px;
+   }
+   .uploadPhotoText{
+     margin-left: 20px;
+   }
+   .uploadVideoText{
+     margin-left: 20px;
+   }
+   .createGroupText{
+     margin-left: 20px;
+   }
+   .uploadVideo{
+     display: flex;
+     flex-direction: row;
+     padding-top: 10px;
+   }
+   .uploadPhoto{
+     display: flex;
+     flex-direction: row;
+     padding-top: 10px;
+   }
+  .group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-top: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 57px;
+    background-color: #dde3ff;
+          border: 2px solid grey;
+}
+   .mentorsIIT {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    padding-right: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+    /* justify-content: end; */
+}
+
+
+
+.resultbox{
+
+  background-color:white;
+ width:100%;
+  overflow-y:visible;
+  overflow-wrap:anywhere;
+    display: flex;
+    flex-direction: column;
+   
+
+}
+
+
+.resultbox .user {
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--lightGrey);
+}
+
+   .messageaddwrap {
+    display: flex;
+    flex-direction: row;
+    padding-right: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+    justify-content: end;
+    flex:auto;
+}
+   .group:hover{
+    background-color:#90e2d9 ;
+    cursor: pointer;
+    
+   }
+   .createGroup{
+     display: flex;
+     flex-direction: row;
+     padding-top: 10px;
+           margin-bottom: 50px;
+   }
+
+   .createGroupText{
+     text-align: center;
+   }
+
+   
+   #plusIcon{
+     width: 25px;
+     height: 25px;
+     margin-left:20px;
+   }
+   .messageToIITian {
+    width: 40px;
+    height: 34px;
+  
+}
+   .messageToIITian:hover {
+   
+   border-radius: 50%;
+   background-color: #aaa;
+}
+   .addToIITian {
+    width: 32px;
+    height: 34px;
+    margin-left: 20px;
+}
+  .addToIITian:hover {
+    
+    background-color: #DFF6FF;
+    border-radius: 50%;
+}
+   #groupImage{
+     width: 40px;
+     height: 40px;
+     margin-left:20px;
+     border-radius: 50%;
+   }
+   .uploadPost{
+    cursor: pointer;
+  }
+   .uploadPhoto{
+    cursor: pointer;
+  }
+   .createGroup{
+    cursor: pointer;
+  }
+
+  .logotext{
+
+    display:none;
+  }
+  
+.profilePageLowerContainer{
+  height:300px;
+  width:100%;
+  background-color:red;
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  
+
+}
+
+.profilePageLowerleftContainer
+{
+
+width: 30%;
+height: 100%;
+background-color: #fff;
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding-top: 30px;
+padding-left: 100px;
+
+
+}
+
+.editprofile {
+  margin-top: 20px;
+}
+.settings {
+margin-top: 20px;
+}
+.groups {
+margin-top: 20px;
+}
+.profilePageLowerrightContainer
+{
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* overflow-wrap: anywhere;
+    overflow: scroll; */
+}
+
+
+#video{
+width:180px;
+background-color:black;
+height:180px;
+margin-left:5px;
+margin-bottom:5px;
+
+
+
+}
+
+.grplower{
+
+  padding-left: 120px;
+  margin-top:40px;
+  font-style:bold;
+  align-items:center;
+  background-color:#aaaaaa0f;
+}
+
+
+.leftContainermobile{
+  display: none;
+}
+
+.leftUpperContainermobile{
+  display: none;
+}
+   @media screen and (max-width: 750px) {
+
+body{
+
+  overflow-x: hidden;
+}
+.searchinput{
+  display: none;
+}
+.logotext{
+
+  display:block;
+}
+.communityImage{
+    display:none;}
+
+
+
+
+.burger{
+
+ 
+  height: 100%;
+  display: block;
+  padding-top: 35px;
+  margin-left: 10px;
+  position: absolute;
+}
+
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  margin-left: 1%;
+  margin-top: 35px;
+  width: 397px;
+  border-radius: 0px;
+  display: none;
+}
+.VectorgroupPhoto{
+       display:none;}
+#Kqlogo {
+  margin-left: 100px;
+}
+      /* li{
+        position: absolute;
+        height: 700px;
+        background-color: red;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+      } */
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 90px;
+        height: 92vh;
+        background-color: #DFF6FF;
+        transform: translateX(-200%);
+        width: 100%;
+        position: absolute;
+        padding-left: 0px;
+        /* justify-content: space-around; */
+        /* opacity: 0; */
+        transition: transform 0.5s ease-in;
+        z-index: 1000;
+    }
+
+    .nav-item{
+
+
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+      height: 100px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      
+    }
+    .nav-item:hover{
+
+    background-color: #fff;
+      
+    }
+
+
+    #navbarIcon {
+      margin-left: 0px;
+    }
+    .accessComments {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      padding-left: 4px;
+  }
+
+  .like {
+    width: 57%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+}
+.sharepost {
+  width: 43%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 31px;
+}
+
+    .outercontainer{
+     
+      display: flex;
+      flex-direction: column;
+     
+    }
+    .outerpostcontainer{
+     
+      display: flex;
+      flex-direction: column-reverse;
+     
+    }
+    .outerpostpagecontainer{
+     
+      display: flex;
+      flex-direction: column;
+     
+    }
+
+   
+
+    /* .leftContainer{
+      width: 100%;
+      background-color:#fff;
+      margin-right: 20px;
+      padding-top: 20px;
+      height: 300px;
+      ;
+    } */
+
+    .leftContainermobile{
+      display: block;
+    }
+    .leftUpperContainermobile{
+      display: block;
+    }
+    .leftContainer{
+      display: none;
+    }
+    .leftContainerexplore{
+      display: block;
+    }
+    .leftUpperContainer{
+      display: none;
+    }
+
+   
+    .leftUpperContainermobile {
+      width: 100%;
+      background-color:#fff;
+      margin-right: 20px;
+      padding-top: 20px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      /* position: absolute;
+      margin-left: 190px; */
+  }
+
+
+  .grpheadMentorPage{
+
+    padding-left:150px;
+    margin-top:50px;
+    font-style:bold;
+    justify-content:space-between;
+    width:100%;
+ 
+ 
+   }
+
+   .leftUpperContainerMentorpage {
+    width: 100%;
+    background-color: #FFF;
+    margin-right: 10px;
+    padding-top: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    /* position: absolute;
+    margin-left: 190px; */
+}
+    .middlleContainer{
+      width: 100%;
+      background-color:#fbf4f4;
+      padding-top: 20px;
+      /* padding-left: 20px;
+      padding-right: 20px; */
+
+    }
+
+    .grplower{
+
+      padding-left:170px;
+      margin-top:40px;
+      font-style:bold;
+      align-items:center;
+      background-color:#aaaaaa0f;
+    }
+    .rightContainer{
+      width: 100%;
+      background-color:#fff;
+      text-align: center;
+      margin-right: 0px;
+      margin-left: 0pc;
+      padding-top: 20px;
+      overflow-y: visible;
+      overflow-wrap: anywhere;
+        height:466px;
+    }
+
+  
+    .outerprofilecontainer {
+      width: 100%;
+      background-color: #F6FBF4;
+      margin-top: 0px;
+      padding-top: 40px;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      justify-content: center;
+  }
+
+  .postedByProfilePic {
+    height: 70px;
+    width: 70px;
+}
+
+
+
+.profilePageLowerContainer {
+  height: 300px;
+  width: 100%;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+.profilePageLowerleftContainer
+{
+
+width: 100%;
+height: 100%;
+background-color: #fff;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+padding-top: 30px;
+padding-left: 0px;
+
+
+}
+
+.profilePageLowerrightContainer
+{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  /* overflow-wrap: anywhere;
+    overflow: scroll; */
+}
+
+
+#video{
+  width:100px;
+  background-color:black;
+  height:100px;
+  margin-left:2px;
+  margin-bottom:5px;
+  
+  
+  
+  }
+
+  .postmiddle {
+    width: 100%;
+    background-color: #fff;
+    /* padding-left: 20px; */
+    padding-top: 10px;
+    padding-bottom: 5px;
+    /* padding-right: 20px; */
+    display: flex;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    /* overflow: scroll; */
+}
+  .postmiddleText {
+    width: 100%;
+    background-color: #fff;
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    display: flex;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    /* overflow: scroll; */
+      font-size:14px;
+}
+       
+        .postmiddleInternship {
+    width: 100%;
+    background-color: #fff;
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    display: flex;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    /* overflow: scroll; */
+      font-size:17px;
+}
+
+.rightseparatePagePostContainer {
+  width: 100%;
+  background-color: #fff;
+  margin-left: 10px;
+  text-align: center;
+  padding-top: 5px;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+  }
+
+
+
+  .textandlogowrap{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logotextcontent{
+
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top: 2px;
+    
+  }
+  .footer 
+        {
+          height: 0px;
+          width: 100%;
+          background-color: #F6FBF4;
+          margin-top: 0px;
+        }
+
+        .nav-active{
+
+          
+          transform: translateX(0%);
+        }
+  .profilePageouterContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    /* height: 300px; */
+    overflow: visible;
+    overflow-wrap: anywhere;
+
+  }
+  .profilePageUpperContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    height: 300px;
+
+  }
+.profilePageUserDetails { 
+  background-color: #fff;
+  width:25%;
+  height: 100%;
+
+}
+.profilePagePostContainer {
+  background-color: #fff;
+  width: 25%;
+  height: 100%;
+  margin-left: 9px;
+}
+.profilePagefollowContainer{
+  background-color: #fff;
+  width:25%;
+  height: 100%;
+
+} 
+.profilePagefollowingContainer{
+  background-color: #fff;
+  width:25%;
+  height: 100%;
+
+}
+
+
+
+
+
+.profileposts{
+  width: 180px;
+  background-color: #fff;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: flex;
+  height: 180px;
+ /* overflow: scroll; */
+ 
+
+}
+/* .outerprofilecontainer{
+  height: 100vh;
+} */
+
+
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+
+a{
+  color: black;
+}
+
+
+
+
+
+.userImageContainer {
+  width: 50px;
+  height: 50px;
+}
+
+.userImageContainer img {
+  width: 100%;
+  border-radius: 50%;
+  background-color: white;
+}
+#ProfilePhoto{
+
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+
+#postlink{
+
+  display: flex;
+  flex-direction: row;
+  
+
+}
+
+
+.copytoclipboardicon{
+
+  margin-left: 10px;
+}
+
+
+#copytextlink{
+
+  width:100%;
+  
+
+}
+.linktopost{
+
+  width:70%;
+  
+
+}
+
+
+#EditProfilePic{
+
+  margin-top: 20px;
+}

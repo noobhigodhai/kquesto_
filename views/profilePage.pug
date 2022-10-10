@@ -1,0 +1,283 @@
+extends layout/layout3.pug     
+block content
+   .modal#photoUploadmodal(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+         .modal-content
+            .modal-header
+               h5.modal-title Modal title
+               button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+            .modal-body 
+                input#imagepost.form-control(type='file')
+               
+                .imagePreviewContainer 
+                   image#imagePreview(style="width:400px;height:400px;")
+            .modal-footer
+               button#imageUploadButton.btn.btn-primary(type='button') Post
+               button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+   .outerprofilecontainer
+      .profilePageouterContainer
+         .profilePageUpperContainer
+            .profilePageUserDetails(style="display:flex;flex-direction:column;justify-content:center;text-align:center;")
+                  .profilePagePic 
+                        img#ProfilePhoto(src='/images/users.jpg')
+
+                  .profilePageUserName #{profile.name}
+                  .profilePageCollegeName #{profile.collegeName}
+            .profilePagePostContainer(style="display:flex;flex-direction:column;justify-content:center;text-align:center;") 
+                  .profilePageUserName Posts
+                  .profilePagepostnumber 0 
+            .profilePagefollowContainer(style="display:flex;flex-direction:column;justify-content:center;text-align:center;") 
+                  .profilePageUserName followers
+                  .profilePagefollowersnumber #{profile.followers.length}
+            .profilePagefollowingContainer(style="display:flex;flex-direction:column;justify-content:center;text-align:center;")
+                  .profilePageUserName following
+                  .profilePagefollowingnumber #{profile.following.length}
+         .profilePageLowerContainer
+            .profilePageLowerleftContainer
+                  label(for='editprofile') 
+                     .editprofile#editprofile Edit Profile
+                  label(for='settings')
+                     .settings#settings Posts
+                  label(for='groups')
+                     .groups#groups Groups
+            .profilePageLowerrightContainer
+
+  
+      
+
+   script.
+      var profile = '!{profile}';
+      var profileforcontent = !{profileinfo};
+      
+      //- var userLoggedIn = '!{userLoggedIn}';
+         //- if(profile._id)
+    
+      
+         var profilepichtml ="";
+         
+         var cropper; 
+            
+            $(document).ready(function(){
+               $("video").prop('muted', true);
+               //- $("#ProfilePhoto").css('src', profile.profilepic);
+
+
+
+                     $.post("/api/users/getprofilepagephoto", {postedBy:profileforcontent._id},(data)=>{
+                        
+
+                           
+                                profilepichtml =`<img id ="ProfilePhoto" src= '${data.profilepic}'>`;
+
+                               $(".profilePagePic").html(profilepichtml)
+                                       
+                        
+               
+                  })
+                     $.post("/api/users/getpostnumber", {postedBy:profileforcontent._id},(data)=>{
+                        
+                            
+
+                               $(".profilePagepostnumber").html(data.length)
+                                       
+                        
+               
+                  })
+                     $.post("/api/users/getprofilepostpagecontent", {postedBy:profileforcontent._id},(data)=>{
+                        var finalhtml="";
+                        var pichtml="";
+                        var videohtml="";
+                        data.forEach((results)=>{
+
+                           if(results.PostPic !=undefined){
+                              pichtml +=`<a href="/postPage/photopost/${results._id}"><div class="profileposts"><img src="${results.PostPic}" /></div></a>`;
+                                       
+                        console.log(pichtml)
+                               }
+                           if(results.videopath !=undefined){
+                              videohtml +=`<video id="video" autoplay="autoplay" loop="loop" controls="controls" muted="muted" >
+                                                <source src="${results.videopath}" type="video/mp4" />
+                                             </video></div>`;
+                                                      
+                        console.log(pichtml)
+                               }
+                        })
+                              console.log(pichtml) 
+                               console.log(pichtml)
+                        finalhtml = videohtml+pichtml;
+                  $(".profilePageLowerrightContainer").html(finalhtml)
+                  })
+                 
+                  })
+
+
+                  $(document).on("click" , "#editprofile" , ()=>{
+
+                           var html = "";
+                           html =  editinfo();
+                           
+                           $(".profilePageLowerrightContainer").html(html)
+                          document.getElementById("editProfileInfo").addEventListener('submit', (event) => {
+                                 event.preventDefault();
+                                 var EditName = document.getElementById("EditName").value
+                                 var collegeName =document.getElementById("EditCollegeName").value
+                                 var payload={
+                                 name: EditName,
+                                 collegeName: collegeName,
+                                 }
+                                 console.log(payload)
+                                 $.post("/api/users/editdetails" ,{name:EditName ,collegeName:collegeName} ,(data)=>{
+                                 console.log(data)
+                                 //- window.location.href="https://www.kquesto.com/";
+               
+
+               
+                  })
+               });
+
+                     console.log("hemlo")
+                  })
+
+                  $(document).on("click" , "#settings" , ()=>{
+                        $("video").prop('muted', true);
+                        $(".profilePageLowerrightContainer").html("")
+                        var finalhtml="";
+                        var pichtml="";
+                        var videohtml="";
+                         $.post("/api/users/getprofilepostpagecontent", {postedBy:profileforcontent._id},(data)=>{
+                        data.forEach((results)=>{
+
+                           if(results.PostPic !=undefined){
+                              pichtml +=`<a href="/postPage/${results._id}"><div class="profileposts"><img src="${results.PostPic}" /></div></a>`;
+                                       
+                        console.log(pichtml)
+                               }
+                           if(results.videopath !=undefined){
+                              videohtml +=`<video id="video" autoplay="autoplay" loop="loop" controls="controls" muted="muted" >
+                                                <source src="${results.videopath}" type="video/mp4" />
+                                             </video></div>`;
+                                                      
+                        console.log(pichtml)
+                               }
+                        })
+                              console.log(pichtml) 
+                               console.log(pichtml)
+                        finalhtml = videohtml+pichtml;
+                  $(".profilePageLowerrightContainer").html(finalhtml)
+                  })
+
+                     console.log("hemlo")
+                  })
+
+                  $(document).on("click" , "#groups" , ()=>{
+
+
+
+                     console.log("hemlo")
+                  })
+                  
+
+
+
+        function editinfo()
+
+        {
+
+
+            return  `<div><div><form id="editProfileInfo" method="post" >
+                        <div class="form-group"><label for="email"></label><input class="form-control" id="EditName" name="email" type="text" placeholder="Edit Your Name" /></div>
+                        <div class="form-group"><label for="email"></label><input class="form-control" id="EditCollegeName" name="email" type="text" placeholder="Edit College Name" /></div>
+                        
+                     <button class="btn btn-primary" id="submit-btn" type="submit" style="background-color:#3EC70B;width:100%;margin-top:20px;justify-content:center;color:white;">Save Changes</button>
+                     </form>
+                     </div>
+                     <div class="form-group" id="EditProfilePic" style="display:flex;flex-direction:row;"> 
+                     <div class="updateprofilepicicon">
+                     <image src="/images/camera.png" style="width:20px;height:20px;"></div>
+                     <div class="updateprofilepicicontext"style="margin-left:20px;">Update profile Pic</div>
+                     </div></div>`;
+
+
+
+                           }
+
+      $(document).on("click" , "#EditProfilePic" , function(){ 
+      $("#photoUploadmodal").modal("show");
+      console.log("hemloes")
+      })
+
+      //- var form = document.getElementsById("editProfileInfo");
+            
+
+
+
+      //-       form.addEventListener('submit', (event) => {
+      //-          // stop form submission
+      //-          event.preventDefault();
+
+
+      //-             var EditName = document.getElementsById("EditName");
+      //-             var EditCollegeName = document.getElementsById("EditCollegeName");
+
+
+
+      //-       });
+
+
+      $("#imagepost").change(function(){ 
+            console.log("hemlo photuuu upload nahi hoarahi ji")
+         if(this.files && this.files[0]) {
+         var reader = new FileReader();
+         reader.onload = (e) => {
+         var image = document.getElementById("imagePreview");
+         image.src = e.target.result;
+
+         if(cropper !== undefined) {
+            cropper.destroy();
+            }
+
+         cropper = new Cropper(image, {
+            aspectRatio: 1 / 1,
+            background: false
+            });
+
+         }
+
+                  console.log(this.files[0])
+         reader.readAsDataURL(this.files[0]);
+            }     
+            })
+
+
+
+      $(document).on("click" ,"#imageUploadButton" ,function() {
+               console.log("formData")
+                  var canvas = cropper.getCroppedCanvas();
+                  console.log("formData")
+                  if(canvas == null) {
+                     alert("Could not upload image. Make sure it is an image file.");
+                     return;
+                  }
+
+                  canvas.toBlob((blob) => {
+                     var formData = new FormData();
+                     formData.append("croppedImage", blob);
+                     console.log(formData)
+
+                     $.ajax({
+                           url: "/api/users/UpdateProfilePicture",
+                           type: "POST",
+                           data: formData,
+                           processData: false,
+                           contentType: false,
+                           success: () => location.reload()
+                     })
+                  })
+               })
+               
+
+
+
+                   
+               

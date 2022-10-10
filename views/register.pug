@@ -1,0 +1,102 @@
+extends layout/layout.pug
+block content
+   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+   .outercontainer
+      .ImageandText(style="display:flex;flex-direction:column;")
+         .image
+            img.logof.d-inline-block.align-top(src='images/logof.png')
+         .text#belowlogotext community for Learners
+      .registerinnercontainer
+         form#registerpageForm
+            .form-group
+               label(for='name')
+               input#name.form-control(type='name', placeholder='Name' style="background-color:#e8f0fe;")
+            .form-group
+               label(for='email')
+               input#email.form-control(  type='email', placeholder='Email')
+            
+            .form-group
+               label(for='password') 
+               input#password.form-control( type='password' , placeholder='Password')
+            select#profession.form-select.form-select-lg.mb-3(  aria-label='form-select-lg example')
+               option(selected Value=3) select Profession
+               option( Value=0) Student
+               option(value=1) College Student
+               option(value=2) Professor
+            .form-group
+               label(for='email')
+               input#collegeName.form-control( name="email", type='text', placeholder='College Name' )
+            select#community.form-select.form-select-lg.mb-3(  aria-label='form-select-lg example')
+               option(selected Value=0) JEE(Mains+Advance)
+            button#submit-btn.btn.btn-primary(type='submit',style="background-color:#1877f2;") SignUp
+            a(href="/auth/google")
+               .uploadphoto
+                  .photo(style="width:40px;height:40px;background-color:#fff;margin-top:0px;margin-left:0px;")
+                     image(src="images/search.png", style="width:30px;height:30px;margin-top:10px;margin-left:10px;")
+                  .text(style="margin-left:50px;margin-top:10px;padding-top:0px;font-size:20px;padding-left:50px;") Google 
+            a( href ="/login")
+             .textquestion(style="font-size:15px;") Do you already have an account? login
+   script.
+     
+
+
+      var form = document.getElementById("registerpageForm")
+      var profession = document.getElementById("profession");
+      
+    
+      var options = profession.querySelectorAll("option");
+       
+  
+   
+      document.querySelector("#profession").addEventListener("change" , function(){
+           var professionvalue = document.getElementById("profession").value;
+         console.log(options)
+      if(this.value!=0)
+      {
+          $("#collegeName").css("display" , "block")
+           form.addEventListener('submit', (event) => {
+               event.preventDefault();
+               console.log("hpgaya google login")
+               var name = document.getElementById("name").value
+                  var email = document.getElementById("email").value
+                  var password =document.getElementById("password").value
+                  var profession =document.getElementById("profession").value
+                  var collegeName = document.getElementById("collegeName").value;
+                  var community = document.getElementById("community").value;
+
+                  $.post("/api/users" , {name:name,email:email,password:password,profession:profession,collegeName:collegeName, community:community  } ,function(data){
+
+                        console.log(data)
+                        window.location = "http://www.kquesto.com/";
+                  });   
+      });
+
+      }
+
+      else if(this.value==0)
+      {  $("#collegeName").css("display" , "none")
+          console.log("hemlo")
+           profession = document.getElementById("profession").value;
+           form.addEventListener('submit', (event) => {
+
+               event.preventDefault();
+                   var name = document.getElementById("name").value
+                  var email = document.getElementById("email").value
+                  var password =document.getElementById("password").value
+                  var profession =document.getElementById("profession").value
+                  var community = document.getElementById("community").value;
+                  var collegeName ="student";
+      $.post("/api/users" , {name:name,email:email,password:password,profession:profession,collegeName:collegeName ,community:community  } ,function(data){
+
+            console.log(data)
+            window.location = "http://www.kquesto.com/";
+       });
+        
+         
+
+
+      });
+      }
+      console.log(professionvalue+"hemlo")
+       });
+  

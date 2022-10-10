@@ -1,0 +1,272 @@
+extends layout/layout2.pug     
+block content 
+   button(onclick='myFunction()') Show dialog  
+   .modal#postmodal(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+         .modal-content
+            .modal-header
+               h5.modal-title Modal title
+               button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+            .modal-body
+                input#imagepost.form-control(type='file')
+               
+                .imagePreviewContainer 
+                   image#imagePreview(style="width:400px;height:400px;")
+            .modal-footer
+               button#imageUploadButton.btn.btn-primary(type='button') Post
+               button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+   .outerContainer 
+      form#registerForm
+         .form-group
+            label(for='exampleInputEmail1') Post
+            input#text.form-control(type='text', aria-describedby='emailHelp', placeholder='Type something')
+            button.btn.btn-primary(type='submit' onclick="hemlo();") Post 
+      form#PostForm
+         .form-group
+            label(for='exampleInputEmail1') Post
+            input#text.form-control(type='file')
+            button.btn.btn-primary(type='submit' onclick="hemlo();") Post 
+      .innerContainer(style="")
+         .innerPostContainer(style="margin-top:40px;")
+   
+   script.
+      var cropper; 
+      var form = document.getElementById("registerForm")
+      form.addEventListener('submit', (event) => {
+      // stop form submission
+      event.preventDefault();
+      console.log("hemlo")
+   
+      var text = document.getElementById("text").value
+      console.log(text)
+      var payload={
+      text: text,
+      }
+      console.log(payload)
+      $.post("/api/posts" ,{text:text} ,(data)=>{
+      console.log(data)
+      //- res.status(200).render("home")
+      //- $(".outercontainer").html(data)
+       $.get("/api/posts/getposts" ,(data)=>{
+            console.log(data)
+            //- res.status(200).render("home")
+            //- $(".outercontainer").html(data)
+            data.forEach((result)=>{
+            var text = result.text ;
+               console.log(text)
+              
+                  
+                  var html= createhtml(text);
+
+               
+                  
+                  console.log(html)
+                  $(".innerPostContainer").append(html)
+                 
+                  
+
+
+
+               })
+            })
+      
+      })
+      });
+      var form = document.getElementById("PostForm")
+      form.addEventListener('submit', (event) => {
+      // stop form submission
+      event.preventDefault();
+      console.log("hemlo")
+      var text = document.getElementById("text").value
+      console.log(text)
+      var payload={
+      text: text,
+      }
+      console.log(payload)
+      $.post("/api/posts" ,{text:text} ,(data)=>{
+      console.log(data)
+       $.get("/api/posts/getposts" ,(data)=>{
+            console.log(data)
+            //- res.status(200).render("home")
+            //- $(".outercontainer").html(data)
+            data.forEach((result)=>{
+            var text = result.text ;
+               console.log(text)
+              
+                  
+                  var html= createhtml(text);
+
+               
+                  
+                  console.log(html)
+                  $(".innerPostContainer").append(html)
+                 
+                  
+
+
+
+               })
+            })
+      
+      })
+      });
+      $(document).ready(function(){
+            
+            $.get("/api/posts/getposts" ,(data)=>{
+            console.log(data)
+            //- res.status(200).render("home")
+            //- $(".outercontainer").html(data)
+            data.forEach((result)=>{
+            
+            var text = result.text ;
+            var postpic = result.PostPic;
+
+            if(postpic.length!=0)
+            {
+               postpic.forEach((result)=>{
+
+                  var html= createimagehtml(result);
+
+               
+                  
+                  console.log(html)
+                  $(".innerPostContainer").append(html)
+
+
+            })
+            }
+
+            else {
+
+               
+            }
+               console.log(postpic)
+               console.log(text)
+              
+                  
+                  var html= createhtml(text);
+
+               
+                  
+                  console.log(html)
+                  $(".innerPostContainer").append(html)
+                 
+                  
+
+
+
+               })
+            })
+      
+      })
+       function createimagehtml(data)
+      {
+          return `<div class= 'card postCard' >
+                     <div style="display:flex;flex-direction:row;">
+                        <div class='PostImage'><img class='card-img-top' src='/images/prakhar.jpeg' alt='Card image cap' /></div>
+                        <div style='display:flex; flex-direction:column;'>
+                           <div class='PostMentorName'>
+                                 <h5 class='card-title'>Prakhar Yadav</h5>
+                           </div>
+                           <div class='PostMentorCollegeName'>
+                                 <h5 class='card-title'>IIT BHU</h5>
+                           </div>
+                        </div>
+                     </div>
+                     <div class='PostContent'><image src='..${data}'></div>
+                     <div class="comment-like">
+                        <div class="like" '>
+                        <img class='likeImage' src='/images/like.png' alt='Card image cap' />
+                        </div>
+                        <div class="comment" >
+                        <img class='commentImage' src='/images/comment.png' alt='Card image cap' />
+                        </div>
+                        <div class="share" >
+                        <img class='shareImage' src='/images/share.png' alt='Card image cap' />
+                        </div>
+
+                     </div>
+                 </div>`;
+      } 
+       function createhtml(data)
+      {
+          return `<div class= 'card postCard' >
+                     <div style="display:flex;flex-direction:row;">
+                        <div class='PostImage'><img class='card-img-top' src='/images/prakhar.jpeg' alt='Card image cap' /></div>
+                        <div style='display:flex; flex-direction:column;'>
+                           <div class='PostMentorName'>
+                                 <h5 class='card-title'>Prakhar Yadav</h5>
+                           </div>
+                           <div class='PostMentorCollegeName'>
+                                 <h5 class='card-title'>IIT BHU</h5>
+                           </div>
+                        </div>
+                     </div>
+                     <div class='PostContent'>${data}</div>
+                     <div class="comment-like">
+                        <div class="like" '>
+                        <img class='likeImage' src='/images/like.png' alt='Card image cap' />
+                        </div>
+                        <div class="comment" >
+                        <img class='commentImage' src='/images/comment.png' alt='Card image cap' />
+                        </div>
+                        <div class="share" >
+                        <img class='shareImage' src='/images/share.png' alt='Card image cap' />
+                        </div>
+
+                     </div>
+                 </div>`;
+      } 
+      function myFunction() { 
+         $(".modal").modal("show");
+      console.log("hemloes")
+      }
+
+      $("#imagepost").change(function(){ 
+           
+         if(this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = (e) => {
+               var image = document.getElementById("imagePreview");
+               image.src = e.target.result;
+
+               if(cropper !== undefined) {
+                cropper.destroy();
+            }
+
+            cropper = new Cropper(image, {
+                aspectRatio: 1 / 1,
+                background: false
+            });
+
+        }
+              reader.readAsDataURL(this.files[0]);
+         }     
+         })
+                
+            
+         $("#imageUploadButton").click(() => {
+          
+               var canvas = cropper.getCroppedCanvas();
+
+               if(canvas == null) {
+                  alert("Could not upload image. Make sure it is an image file.");
+                  return;
+               }
+
+               canvas.toBlob((blob) => {
+                  var formData = new FormData();
+                  formData.append("croppedImage", blob);
+                  console.log(formData)
+
+                  $.ajax({
+                        url: "/api/users/profilePicture",
+                        type: "POST",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: () => location.reload()
+                  })
+               })
+            })

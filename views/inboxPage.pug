@@ -1,0 +1,14 @@
+extends layout/main-layout.pug
+
+block content    
+    .resultsContainer
+
+block headerButton
+    a#backanchor(href="/")
+        img#backbtn(src="/images/back.png")
+    a(href="/message/new")
+        i.far.fa-plus-square
+
+
+block scripts
+    script(src="/js/inboxPage.js")

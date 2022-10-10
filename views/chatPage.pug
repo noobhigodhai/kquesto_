@@ -1,0 +1,61 @@
+extends layout/main-layout.pug
+
+block content   
+    .modal#postmodal(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+         .modal-content
+            .modal-header
+               h5.modal-title Settings 
+               button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+            .modal-body
+                .settingswrapbodyLeaveGroup(data-chatid ='{chat._id}')
+                    .settingsImage 
+                            img(src="/images/logout.png", alt="Typing dots" ,id="settings" , style="height:20px;weight:20px;") 
+                    .settingsText(style="margin-left:20px;")   Leave Group
+                .settingswrapbodyGroupChat
+                    .settingsImage 
+                            img(src="/images/group-chat.png", alt="Typing dots" ,id="settings" , style="height:30px;weight:30px;") 
+                    .settingsText(style="margin-left:20px;font-weight:20px;")   group Members
+            .modal-footer
+               button#sharePost.btn-primary(type='button') Post 
+               button.btn-secondary(type='button', data-dismiss='modal') Close
+    
+    if errorMessage
+        span.errorMessage #{errorMessage}
+    else 
+        script.
+            var chatId = '!{chat._id}';
+
+        .chatPageContainer
+            .chatTitleBarContainer
+                +createChatImage(chat, userLoggedIn)
+                span#chatName(data-toggle="modal", data-target="#chatNameModal")
+            
+            .mainContentContainer
+                .loadingSpinnerContainer
+                    img(src="/images/loadingSpinner.gif", alt="Loading spinner" , style="height:50px;widht:50px;")
+                .chatContainer(style="visibility: hidden", data-room=chat._id)
+                    ul.chatMessages
+
+                    .typingDots
+                        img(src="/images/dots.gif", alt="Typing dots")
+
+                    .footer
+                        textarea.inputTextbox(name="messageInput", placeholder="Type a message...")
+                        button.sendMessageButton
+                            i.fas.fa-paper-plane
+        +createChatNameModal(chat)
+     
+    
+block headerButton
+ a#backanchor(href="/message")
+        img#backbtn(src="/images/back.png")
+ img(src="/images/settings.png", alt="Typing dots" ,id="settings" , style="height:30px;weight:30px;")
+
+block scripts
+    script(src="/js/chatPage.js")
+
+
+   
+      

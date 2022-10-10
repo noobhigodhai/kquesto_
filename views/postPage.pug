@@ -1,0 +1,320 @@
+extends layout/layout3.pug     
+block content
+   .modal#sharelinkmodal(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+         .modal-content
+            .modal-header
+               h5.modal-title 
+               button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+            .modal-body#postlink
+                
+            
+ 
+   .outercontainer
+     
+      .outerpostpagecontainer 
+         .leftseparatePagePostContainer
+            .postmiddle
+                     
+           
+         
+           
+            
+         .rightseparatePagePostContainer 
+         
+            .postpageContainer
+                  .postUpper
+                     .postedByProfilePic
+                        img.postedByProfilePic(src='/images/prakhar.jpeg', style='height:50px;width:50px;')
+                     .PostedBydetails
+                        .postedByName  ${name} 
+                        .postedByCollegeName  IIT BHU
+                        .postedByDate  9:06PM 6/8/2020
+                  .likeCommentCount(style='display:flex;flex-direction:row;')
+                           .likenumber(, style='margin-top:50px;margin-left:0px;width:50%') Like
+                           .commentnumber(style='margin-top:50px;margin-left:10px;width:50%;display:flex;justify-content:flex-end;margin-right:20px;')   Comment
+
+                  .postbottom
+                     .like(data-id='${id}')
+                        .LikePostIcon
+                            
+                        .LikePostText Like
+                     .accessComments
+                        .commentPostIcon
+                           img.commentPost(src='/images/comment.png', style='height:20px;width:20px;')
+                        .commentPostText Comment 
+                     #sharevideopost.sharepost
+                        .commentPostIcon
+                           img.commentPost(src='/images/share.png', style='height:20px;width:20px;')
+                        .commentPostText Share 
+                  .commentToPost(style='display:flex;flex-direction:column;width:100%;')
+                     .commentToPostInner
+                        .postedByProfilePiccommentPic
+                           img.postedByProfilePicImage(src='${userLoggedIn.profilepic}', style='height:40px;width:40px;')
+                        .commentForm(style='display:flex;flex-direction:row;width:100%;')
+                           label.sr-only(for='comment')  
+                           input#commentContent.form-control(name='comment', type='text', placeholder='type Something....')
+                           button.commentPostbtn Post 
+                     div#postcomment
+
+      script.
+         var postid = '!{postid}';
+         var postType = '!{postType}';
+         $(document).ready(function(){
+               
+            if(postType=="textpost")
+            {
+            $.post("/api/users/getpostpagecontent", {postid:postid},(data)=>{
+                     var likescount = data.likes.length;
+                      $.post("/api/users/commentnumber" ,{postId:postid} , (data)=>{
+                                                       var   commentcount = data.length;
+                     $(".likenumber").html(likescount+" Like")
+                     $(".commentnumber").html(commentcount+" Comment")
+                         $.post("/api/users/checkforLike"  , {postId :postid} ,(data)=>{
+
+                                                            
+                                                                            if(data)
+                                                                                {
+                                                                                $(".LikePostIcon").html('<img class="LikePost" id="'+postid +'like"src="/images/thumb.png" style="height:20px;width:20px;"/>')
+                                                                                }
+                                                                            else
+                                                                                {
+                                                                                $(".LikePostIcon").html('<img class="LikePost" id="'+postid +'like"src="/images/like.png" style="height:20px;width:20px;"/>')
+                                                                               
+                                                                                }
+                                                                       
+                                                                      
+                                                                                           
+                                                                                                
+                                                                       
+                                                                })
+                                                                })
+                           
+                              $(".postmiddle").attr("class", "postmiddleText")
+                              //- $(".postmiddle").classList(".postmiddleText");
+                              $(".postmiddleText").html(data.text)
+                              $(".postedByName").html(data.postedBy.name)
+
+
+          
+                     
+
+
+         
+         })
+           }
+            else if(postType=="videopost")
+            {
+            $.post("/api/users/getpostpagecontent", {postid:postid},(data)=>{
+                     
+
+                     $.post("/api/users/checkforLike"  , {postId :postid} ,(data)=>{
+
+                                                            
+                                                                            if(data)
+                                                                                {
+                                                                                $(".LikePostIcon").html('<img class="LikePost" id="'+postid +'like"src="/images/thumb.png" style="height:20px;width:20px;"/>')
+                                                                                }
+                                                                            else
+                                                                                {
+                                                                                $(".LikePostIcon").html('<img class="LikePost" id="'+postid +'like"src="/images/like.png" style="height:20px;width:20px;"/>')
+                                                                               
+                                                                                }
+                                                                     
+                                                                })
+                     var pichtml = getpostvideohtml(data.videopath );
+
+                           console.log(pichtml)
+                              $(".postmiddle").html(pichtml)
+                              $(".postedByName").html(data.postedBy.name)
+
+
+          
+                     
+
+
+         })
+           }
+           else if(postType=="photopost")
+            {
+            $.post("/api/users/getpostpagecontent", {postid:postid},(data)=>{
+                     $.post("/api/users/checkforLike"  , {postId :postid} ,(data)=>{
+
+                                                            
+                                                                            if(data)
+                                                                                {
+                                                                                $(".LikePostIcon").html('<img class="LikePost" id="'+postid +'like"src="/images/thumb.png" style="height:20px;width:20px;"/>')
+                                                                                }
+                                                                            else
+                                                                                {
+                                                                                $(".LikePostIcon").html('<img class="LikePost" id="'+postid +'like"src="/images/like.png" style="height:20px;width:20px;"/>')
+                                                                               
+                                                                                }
+                                                                       
+                                                                      
+                                                                                           
+                                                                                                
+                                                                       
+                                                                })
+                     var pichtml = getpostpichtml(data.PostPic );
+
+                           console.log(pichtml)
+                              $(".postmiddle").html(pichtml)
+                              $(".postedByName").html(data.postedBy)
+
+
+
+                     
+
+
+         })
+           }
+
+
+
+         })
+
+
+
+         function getpostpichtml(picsrc ){
+
+          return `<image src='${picsrc}', style='width:100%'</image>`;
+           
+
+
+
+         }
+         function getpostvideohtml(videopath ){
+
+          return `<video id="video" style="width:100%;background-color:black;height:550px;margin-left:0px;margin-top:10px;" autoplay="autoplay" loop="loop" controls="controls" muted="muted">
+                           <source  src="${videopath}" type="video/mp4" />
+                        </video>`;
+           
+
+
+
+         }
+         function getposttexthtml(picsrc ){
+
+          return `<image src='${picsrc}', style='width:100%'</image>`;
+           
+
+
+
+         }
+         
+
+           $(document).on("click" , ".commentPostbtn" ,function()  {
+                  var commentbypic = userLoggedIn.profilepic;
+                              
+                  var commentContent = document.getElementById("commentContent").value
+                  console.log(commentContent)
+      
+               $.post("/api/users/postcomments" ,{content:commentContent , postId:postid } ,(data)=>{
+          
+
+               console.log(data)
+         })
+
+
+
+         $("#postcomment").html("");
+         $.post("/api/users/accessComments" ,{postId:postid } ,(data)=>{
+            
+   
+            data.forEach((results)=>{
+   
+                  var commentedBy = results.commentedBy.name;
+                  var content = results.content;
+   
+                   showhtmlAllComment=`<div class="allComments" style="">
+                                             <div class="commentedByProfilePic"> <img class="commentedByProfilePic" src="${commentbypic}" style="height:40px;width:40px;" /></div>
+                                             <div class="namePicWrap" style="display:flex;flex-direction:column;width:auto">
+                                                <div class="commentedByName" style="padding-left:10px;padding-bottom:10px;width:100%">${commentedBy} </div>
+                                                <div class="commentText">${content} </div>
+                                             </div>
+                                          </div>`
+                                          $("#postcomment").prepend(showhtmlAllComment);
+                                          
+              })
+            
+       
+              })
+       
+          })
+               
+         $(document).on("click" , ".accessComments" ,function()  {
+            var commentbypic = userLoggedIn.profilepic;
+               $.post("/api/users/accessComments" ,{postId:postid } ,(data)=>{
+
+                  data.forEach((results)=>{
+
+               var commentedBy = results.commentedBy.name;
+               var content = results.content;
+
+                showhtmlAllComment=`<div class="allComments" style="">
+                                          <div class="commentedByProfilePic"> <img class="commentedByProfilePic" src="${commentbypic}" style="height:40px;width:40px;" /></div>
+                                          <div class="namePicWrap" style="display:flex;flex-direction:column;width:auto">
+                                             <div class="commentedByName" style="padding-left:10px;padding-bottom:10px;width:100%">${commentedBy} </div>
+                                             <div class="commentText">${content} </div>
+                                          </div>
+                                       </div>`
+              
+                                       $("#postcomment").prepend(showhtmlAllComment);
+                 })
+         
+    
+                    })
+                  })
+
+
+
+                        
+            $(document).on("click" , ".like" , function(){ 
+               var likescount;
+               var containerid = ".LikePost";
+               var containeridforlikenumber =".likenumber";
+               $.post("/api/users/likenumber" ,{postId:postid} , (data)=>{
+
+                  likescount = data.likes.length;
+                  
+
+
+            if( ($(containerid).attr("src"))=="/images/like.png"){
+               console.log(likescount);
+               $(containerid).prop("src" , "/images/thumb.png");
+               ++likescount;
+               console.log(likescount)
+                  // var likehtml =likescount;
+
+               $(containeridforlikenumber).html(likescount+" Like");
+
+            $.post("/api/users/addlike"  , {id: postid} ,(data)=>{
+                  console.log(data)
+            })
+            }
+
+            else if(($(containerid).attr("src"))=="/images/thumb.png"){
+               // likescount=likescount-1;
+               --likescount;
+               $(containerid).prop("src" , "/images/like.png");
+               $(containeridforlikenumber).html(likescount+" Like");
+               console.log(likescount)
+            $.post("/api/users/removelike"  , {id: postid} ,(data)=>{
+                  
+            })
+            }
+            })
+            })
+
+     
+                function createallcommenthtml(commentedBy ,content ){
+          return `<div class="allComments" style="">
+                     <div class="commentedByProfilePic"> <img class="commentedByProfilePic" src="/images/prakhar.jpeg" style="height:40px;width:40px;" /></div>
+                     <div class="namePicWrap" style="display:flex;flex-direction:column;width:100%">
+                        <div class="commentedByName" style="padding-left:10px;padding-bottom:10px;width:100%">${commentedBy} </div>
+                        <div class="commentText">${content} </div>
+                     </div>
+                  </div>`;
+                        } 

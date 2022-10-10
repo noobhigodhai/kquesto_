@@ -1,0 +1,81 @@
+extends layout/layout3.pug     
+block content
+   .modal#postmodal(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+         .modal-content
+            .modal-header
+               h5.modal-title Modal title
+               button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+            .modal-body
+                input#imagepost.form-control(type='file')
+               
+                .imagePreviewContainer 
+                   image#imagePreview(style="width:400px;height:400px;")
+            .modal-footer
+               button#imageUploadButton.btn.btn-primary(type='button') Post
+               button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+   .chatouterContainer
+      .chatinnerContainer(style="display:flex;flex-direction:row;")
+         
+               
+
+         .innerdetailsContainer(style="")
+            div(style='display:flex;flex-direction:row;border-bottom-style:solid;border-width:2px;border-color:#aaaaaaa8;margin-left:0px;background-image:url("/images/background.jpg");margin-top:0px;border-top-right-radius: 20px;border-top-left-radius: 20px;')
+               .PostImage
+                  img.card-img-top(src='/images/prakhar.jpeg', alt='Card image cap')
+               div(style='display:flex; flex-direction:column;')
+                  .PostMentorName
+                     h5.card-title(style="color:#fff;") Prakhar Yadav
+                  .PostMentorCollegeName
+                     h5.card-title(style="color:#fff;")  IIT BHU
+            .chatperson(style="display:flex;flex-direction:row;margin-bottom:50px;margin-top:20px;") 
+              .photo(style="width:40px;height:20px;background-color:#fff;margin-top:0px;margin-left:0px;display:flex;flex-direction:row;")
+                   img.chatpersonimage(src='/images/prakhar.jpeg', style="width:35px;height:35px;margin-top:5px;border-radius:50%;" alt='Card image cap')
+              .text(style="margin-left:20px;margin-top:0px;font-size:20px;") Prakhar Yadav
+            .chatperson(style="display:flex;flex-direction:row;margin-bottom:50px;")  
+               .photo(style="width:40px;height:30px;background-color:#fff;margin-top:0px;margin-left:0px;display:flex;flex-direction:row;")
+                   img.chatpersonimage(src='/images/prakhar.jpeg',style="width:35px;height:35px;margin-top:5px;border-radius:50%;" alt='Card image cap')
+               .text(style="margin-left:20px;margin-top:0px;font-size:20px;") Prakhar Yadav
+            .chatperson(style="display:flex;flex-direction:row;margin-bottom:50px;")  
+               .photo(style="width:40px;height:30px;background-color:#fff;margin-top:0px;margin-left:0px;display:flex;flex-direction:row;")
+                    img.chatpersonimage(src='/images/prakhar.jpeg',style="width:35px;height:35px;margin-top:5px;border-radius:50%;" alt='Card image cap')
+               .text(style="margin-left:20px;margin-top:0px;font-size:20px;") Prakhar Yadav 
+            .chatperson(style="display:flex;flex-direction:row;margin-bottom:50px;")  
+               .photo(style="width:40px;height:30px;background-color:#fff;margin-top:0px;margin-left:0px;display:flex;flex-direction:row;")
+                    img.chatpersonimage(src='/images/prakhar.jpeg',style="width:35px;height:35px;margin-top:5px;border-radius:50%;" alt='Card image cap')
+               .text(style="margin-left:20px;margin-top:0px;font-size:20px;") Prakhar Yadav 
+            .chatperson(style="display:flex;flex-direction:row;margin-bottom:50px;")  
+               .photo(style="width:40px;height:30px;background-color:#fff;margin-top:0px;margin-left:0px;display:flex;flex-direction:row;")
+                    img.chatpersonimage(src='/images/prakhar.jpeg',style="width:35px;height:35px;margin-top:5px;border-radius:50%;" alt='Card image cap')
+               .text(style="margin-left:20px;margin-top:0px;font-size:20px;") Prakhar Yadav 
+           
+            .chatperson(style="display:flex;flex-direction:row;margin-bottom:50px;")  
+               .photo(style="width:40px;height:30px;background-color:#fff;margin-top:0px;margin-left:0px;display:flex;flex-direction:row;")
+                     img.card-img-top(src='/images/prakhar.jpeg',style="width:35px;height:35px;margin-top:5px;border-radius:50%;" alt='Card image cap')
+               .text(style="margin-left:20px;margin-top:0px;font-size:20px;") Prakhar Yadav 
+         
+         .chatinnerPostContainer(style="margin-top:10px;")
+            .card.chatcard(data-id='${id}',style="height:700px;")
+               div(style='display:flex;flex-direction:row;')
+                  .PostImage
+                     img.card-img-top(src='/images/prakhar.jpeg', alt='Card image cap')
+                  .mentor(style='display:flex; flex-direction:column;padding-left:0px;')
+                     .PostMentorName
+                     h5.card-title(style='font-size:19px;')  Prakhar Yadav
+               .PostContent(style=' margin-top:40px;border-top-style:solid;border-width:1px; border-color:#aaaaaaa8;background-color:#1877f2;width:fit-content;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;border-top-right-radius:25px;border-top-left-radius:25px;border-bottom-right-radius:25px; ') ${hemlo}
+               .PostContent(style='margin-top:40px;border-top-style:solid;border-width:1px; border-color:#aaaaaaa8;background-color:#1877f2;width:fit-content;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;border-top-right-radius:25px;border-top-left-radius:25px;border-bottom-right-radius:25px; ') ${hemlo}
+               .input-group.input-group-lg(style="padding-top:7px; margin-left:10px;")
+                     .input-group-prepend(style="width:700px;height:10px;margin-top:450px;")
+                     input.form-control(type='text',placeholder="Type something...", aria-label='Small', aria-describedby='inputGroup-sizing-sm',style="background-color:#efefef;border-radius:50px;")
+
+         
+            
+            
+            
+            //- -console.log(chumtiyes);
+            
+              
+               
+     
+   

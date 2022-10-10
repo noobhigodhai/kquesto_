@@ -1,0 +1,254 @@
+extends layout/layout3.pug     
+block content
+   .modal#postmodal(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+         .modal-content
+            .modal-header
+               h5.modal-title Post
+               button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+            .modal-body
+               
+                textarea#postContent.form-control(type='text' ,placeholder="Type Something.....", style="height:150px")
+                .loadingSpinnerContainer
+                    img(src="/images/loadingSpinner.gif", alt="Loading spinner" , style="height:50px;widht:50px;")
+            .modal-footer(style="display:flex;flex-direction:row;")
+               button#shareTextPostmodal.btn-primary(type='button') Post 
+               button.btn-secondary(type='button', data-dismiss='modal' ,style="margin-left:20px;") Close
+   .modal#videoUploadmodal(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+         .modal-content
+            .modal-header
+               h5.modal-title Post Video To Community
+               button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+            .modal-body
+                form#videouploadform(action='/api/upload', enctype='multipart/form-data', method='post')
+                     
+                     div File: 
+                          
+                        input(type='file', name='someExpressFiles', multiple='multiple')
+                     input(type='submit', value='Upload',style="margin-top:20px;")
+                .loadingSpinnerContainer
+                    img(src="/images/loadingSpinner.gif", alt="Loading spinner" , style="height:50px;widht:50px;")
+                
+   .modal#photoUploadmodal(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+         .modal-content
+            .modal-header
+               h5.modal-title Post Photo To community
+               button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+            .modal-body
+                input#caption.form-control(type='text' ,placeholder="Caption..", style="height:50px;border-bottom:20px;")
+                input#imagepost.form-control(type='file')
+                .loadingSpinnerContainer
+                    img(src="/images/loadingSpinner.gif", alt="Loading spinner" , style="height:50px;widht:50px;")
+                .imagePreviewContainer
+                   image#imagePreview(style="width:400px;height:400px;")
+            .modal-footer(style="display:flex;flex-direction:row;")
+               button#imageUploadButton.btn.btn-primary(type='button' ,style="display:flex;flex-direction:row;justify-content:center;color:white;") Post
+               button.btn.btn-secondary(type='button', data-dismiss='modal',style="display:flex;flex-direction:row;justify-content:center;color:#aaa;") Close
+   .modal#createGroupmodal(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+         .modal-content
+            .modal-header
+               h5.modal-title Group Name
+               button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+            .modal-body
+                input#groupName.form-control(type='text' ,placeholder="Group Name..", style="height:50px")
+                input#groupDescription.form-control(type='description',placeholder=" Group Description.....", style="height:150px;")
+                .loadingSpinnerContainer
+                    img(src="/images/loadingSpinner.gif", alt="Loading spinner" , style="height:50px;widht:50px;")
+            .modal-footer
+               button#createGroupButton.btn-primary(type='button') Create Group 
+               button.btn-secondary(type='button', data-dismiss='modal') Close
+   .modal#sharelinkmodal(tabindex='-1', role='dialog')
+      .modal-dialog(role='document')
+         .modal-content
+            .modal-header
+               h5.modal-title Copy Link
+               button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') &times;
+            .modal-body#postlink
+               .loadingSpinnerContainer
+                    img(src="/images/loadingSpinner.gif", alt="Loading spinner" , style="height:50px;widht:50px;")
+
+   .outercontainer
+     .outerpostcontainer 
+         .leftUpperContainer
+            .leftContainer
+               .mentorsIIT(data-id='${id}')
+                  a(href='')
+                     .groupPhoto
+                        img#groupImage(src='/images/profile.png', alt='Card image cap')
+                  a(href='')
+                     .groupdetails
+                        .groupName Prakhar
+                        .groupMemberNumbertext iit bhu
+                  .messageaddwrap
+                     .messageIITians(data-id='123')
+                        img.messageToIITian(id='email', src='/images/messenger (1).png', alt='Card image cap')
+                     .add(data-id='123')
+                        img.addToIITian(src='/images/add.png', alt='Card image cap', style='width: 32px;height: 34px;margin-left: 20px;')
+
+            
+               .uploadPost
+                  
+                  .uploadPostText
+                     img#plusIcon(src='/images/pencil.png' , alt='Card image cap')
+                  .uploadPostText ask Your Doubt 
+               .uploadPhoto
+                  
+                  .uploadPhotoText
+                     img#plusIcon(src='/images/camera.png' , alt='Card image cap')
+                  .uploadPhotoText Upload Photo to community
+               .uploadVideo
+                  
+                  .uploadVideoText
+                     img#plusIcon(src='/images/play-button.png' , alt='Card image cap')
+                  .uploadPhotoText Upload video to community
+               .createGroup
+                  
+                  .createGroupText
+                     img#plusIcon(src='/images/plus.png' , alt='Card image cap')
+                  .createGroupText Create Group 
+               .communityImage
+                  img#community(src='/images/community.jpg' ,style="width:100%;margin-top:20px;", alt='Card image cap')
+                  .createGroupText Working together to make our future a better place to live and learn 
+                  .grphead(style='padding-left:100px;margin-top:50px;font-style:bold;') Explore IIITians 
+            a(href="/exploreMentor") 
+               .grplower See all
+       
+         .middlleContainer 
+            .loadingSpinnerContainer
+                    img(src="/images/loadingSpinner.gif", alt="Loading spinner" , style="height:50px;widht:50px;margin-left:40%")
+            .postFirstContainer(style="margin-bottom:20px;")
+                 a(href='/profile/62b9f2ccf27e017fd766798e')
+                   .postUpper
+                     .postedByProfilePicPostPage
+                       img.postedByProfilePic(src='/images/prakhar.jpeg', style='height:50px;width:50px;')
+                     .PostedBydetails
+                       .postedByName Prakhar Yadav 
+                       .postedByCollegeName  IIT BHU
+                       .postedByDate Co-Founder (kquesto) 
+                 .postmiddleInternship(style="display:flex;flex-direction:column;margin-bottom:20px;") 
+                     div(style="display:flex;flex-direction:row;justify-content:space-between;") 
+                       div Fill The Feedback Form 
+                       div 
+                         a(href="https://forms.gle/rZuuCeCeeMcJ8FFf6")
+                           button.btn.btn-light(type='button' style="color:white;width:auto;background-color:#74d8ce;" ) Feedback
+                     div(style='margin-top:10px;') 
+                       img(src='/images/6aaa2ca2a25e2c31740836efb02ed663.png', style='width:100%;')
+                        
+                 
+            .postSecondContainer(style="margin-bottom:20px;")
+                 a(href='/profile/62b9f2ccf27e017fd766798e')
+                   .postUpper
+                     .postedByProfilePicPostPage
+                       img.postedByProfilePic(src='/images/prakhar.jpeg', style='height:50px;width:50px;')
+                     .PostedBydetails
+                       .postedByName Prakhar Yadav 
+                       .postedByCollegeName  IIT BHU
+                       .postedByDate Co-Founder (kquesto) 
+                 .postmiddleInternship(style="display:flex;flex-direction:column;margin-bottom:20px;") 
+                     div(style="display:flex;flex-direction:row;justify-content:space-between;") 
+                       div Apply For Internship
+                       div 
+                         a(href="https://forms.gle/XT8urQuiBp1ADnmT8")
+                           button.btn.btn-light(type='button' style="color:white;width:auto;background-color:#74d8ce;" ) Apply For Internship
+                     div(style='margin-top:10px;') 
+                       img(src='/images/internship.png', style='width:100%;')
+              
+
+
+
+         .leftUpperContainermobile
+            .leftContainermobile
+            
+               .uploadPost
+                  
+                  .uploadPostText
+                     img#plusIcon(src='/images/pencil.png' , alt='Card image cap')
+                  .uploadPostText ask Your Doubt 
+               .uploadPhoto
+                  
+                  .uploadPhotoText
+                     img#plusIcon(src='/images/camera.png' , alt='Card image cap')
+                  .uploadPhotoText Upload Photo to community
+               .uploadVideo
+                  
+                  .uploadVideoText
+                     img#plusIcon(src='/images/play-button.png' , alt='Card image cap')
+                  .uploadPhotoText Upload video to community
+               .createGroup
+                  
+                  .createGroupText
+                     img#plusIcon(src='/images/plus.png' , alt='Card image cap')
+                  .createGroupText Create Group 
+               .communityImage
+                  img#community(src='/images/community.jpg' ,style="width:100%;margin-top:20px;", alt='Card image cap')
+                  .createGroupText Working together to make our future a better place to live and learn 
+                  .grphead(style='padding-left:100px;margin-top:50px;font-style:bold;') Explore IIITians 
+            a(href="/exploreMentor" style="margin-top:50px;") 
+               .grplower See all  
+            
+         .rightContainer Follow Groups
+            .gropuedescriptiontext Join The Most Trending Groups
+            .groupOuterContainer
+               .group(data-id='630f6624e0c68335ad311f00')
+                  .groupPhoto
+                     img#groupImage(src='/images/science (1).png', alt='Card image cap')
+                  .groupdetails(style='display:flex;flex-direction:column;')
+                     .groupName JEE MAINS 2022
+                     .groupMemberNumbertext crack JEE
+                  .addToGroup(style='padding-right: 20px;')
+                     img#plusIcon(src='/images/plus.png', alt='Card image cap')
+               .group(data-id='630f6638e0c68335ad311f2d')
+                  .groupPhoto
+                     img#groupImage(src='/images/science-and-tech (1).png', alt='Card image cap')
+                  .groupdetails(style='display:flex;flex-direction:column;')
+                     .groupName JEE ADVANCE  2022
+                     .groupMemberNumbertext For JEE Aspirants
+                  .addToGroup(style='padding-right: 20px;')
+                     img#plusIcon(src='/images/plus.png', alt='Card image cap')
+               .group(data-id='630f664ae0c68335ad311f5a')
+                  .groupPhoto
+                     img#groupImage(src='/images/rocket-ship.png', alt='Card image cap')
+                  .groupdetails(style='display:flex;flex-direction:column;')
+                     .groupName JOSSA 2022-23
+                     .groupMemberNumbertext For JEE Aspirants
+                  .addToGroup(style='padding-right: 20px;')
+                     img#plusIcon(src='/images/plus.png', alt='Card image cap')
+               .group(data-id='630f6658e0c68335ad311f87')
+                  .groupPhoto
+                     img#groupImage(src='/images/science-and-tech (2).png', alt='Card image cap')
+                  .groupdetails(style='display:flex;flex-direction:column;')
+                     .groupName JEE Revision
+                     .groupMemberNumbertext For JEE Aspirants
+                  .addToGroup(style='padding-right: 20px;')
+                     img#plusIcon(src='/images/plus.png', alt='Card image cap')
+               .group(data-id='630f6661e0c68335ad311fb4')
+                  .groupPhoto
+                     img#groupImage(src='/images/technology (1).png', alt='Card image cap')
+                  .groupdetails(style='display:flex;flex-direction:column;')
+                     .groupName JEE 2023
+                     .groupMemberNumbertext crack JEE
+                  .addToGroup(style='padding-right: 20px;')
+                     img#plusIcon(src='/images/plus.png', alt='Card image cap')
+               .group(data-id='630f6670e0c68335ad311fe1')
+                  .groupPhoto
+                     img#groupImage(src='/images/science.png', alt='Card image cap')
+                  .groupdetails(style='display:flex;flex-direction:column;')
+                     .groupName Inside IIT/NIT
+                     .groupMemberNumbertext JEE
+                  .addToGroup(style='padding-right: 20px;')
+                     img#plusIcon(src='/images/plus.png', alt='Card image cap')
+               
+              
+
+               .VectorgroupPhoto
+                        .groupName Join your peer group and enhance your skills
+                        img#gropuVectorPhoto(src='/images/group.jpg',style="width:100%" alt='Card image cap')
+   .footer

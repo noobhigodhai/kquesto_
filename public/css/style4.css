@@ -1,0 +1,471 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color:#fff;
+  }
+  body{
+    background-color:#fff;
+
+  }
+#exampleInputEmail1{
+    width: 70%;
+}
+
+.textquestion{
+
+    margin-left:13px;
+    margin-top:32px;
+}
+
+
+#collegeName{
+
+    display: none;
+}
+#exampleInputPassword1{
+    width: 70%;
+}
+.form-control{
+    width: 80%;
+    height: 45px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.form-select{
+    width: 80%;
+    height: 45px;
+    font-size: 20px;
+    background-color:#fff;
+    padding-left: 10px;
+    border-radius: 2px;
+    margin-bottom: 25px;
+
+    }
+
+#submit-btn{
+    width: 80%;
+    height: 45px;
+    font-size: 20px;
+}
+
+::placeholder{
+    font-size: 20px;
+}
+.innercontainer {
+    width: 500px;
+    height: 450px;
+    background-color: #fff;
+    margin-left: 230px;
+    margin-top: 100px;
+}
+.innercontainergoogle {
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+.registerinnercontainer {
+    width: 500px;
+    height: 646px;
+    background-color: #fff;
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-left: 252px;
+}
+.outerchoosecommunitycontainer {
+    background-color: #efefef;
+    /* padding-left: 10%;
+    padding-right: 40%; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.outercontainer {
+    background-color: #fff;
+    padding-left: 10%;
+    padding-right: 40%;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+.ImageandText{
+    margin-top: 150px;
+}
+#registerpageForm {
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 80px;
+    border-radius: 20px;
+    width: 500px;
+    height: 650px;
+    font-size: 20px;
+    border-style: solid;
+    border-color: #aaaaaa57;
+    border-radius: 20px;
+    box-shadow: 10px 3px 27px -20px #aaa;
+}
+#registerForm {
+    margin-top: 10px;
+    padding-top: 25px;
+    padding-left: 80px;
+    margin-left: 100px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #aaa;
+    border-radius: 20px;
+    width: 450px;
+    height: 400px;
+    font-size: 20px;
+    box-shadow: 10px 3px 27px -20px #aaa;
+   
+}
+#registerFormgooglemiddlelogin {
+    margin-top: 70px;
+    padding-top: 25px;
+    padding-left: 80px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #aaa;
+    border-radius: 20px;
+    width: 450px;
+    height: 300px;
+    font-size: 20px;
+    box-shadow: 10px 3px 27px -20px #aaa;
+   
+}
+
+.uploadphoto{
+    margin-top: 10px;
+    border: 1px;
+    border-style: solid;
+    border-color: #aaa;
+    display: flex;
+    flex-direction: row;
+    cursor:pointer;
+    width: 80%;
+    
+}
+
+.text{
+    width: 600px;
+ }
+ #belowlogotext {
+    width: 90%;
+    padding-left: 81px;
+    padding-top: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #000;
+}
+#registertext{
+ margin-left:10px;
+ margin-top:10px;
+ font-size:30px;
+ color:#000;
+ width:600px;
+ padding-left: 80px;
+}
+
+#googleloginimage{
+
+
+
+    width:30px;
+    height:30px;
+    margin-top:5px;
+    
+}
+
+.logof{
+
+
+    width: 430px;
+    height: 200px;
+}
+.textgoogle{
+
+    margin-left: 10px;
+    padding-top: 5px;
+}
+
+.photo{
+
+
+    width:40px;
+    height:40px;
+    background-color:#fff;
+    margin-left:70px;
+    /* margin-top:0px;
+    margin-left:0px; */
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+    #registertext{
+        padding-left:50px;
+        margin-top:10px;
+        font-size:15px;
+        color:#000;
+        width:100%;
+        justify-content: center;
+       }
+
+       .textgoogle{
+
+        margin-left: 10px;
+        padding-top: 5px;
+    }
+    
+
+    .ImageandText{
+       margin-top: 10px;
+    } 
+
+
+    /* .form-group{
+
+        margin-right: 7px;
+    } */
+ 
+
+    .text{
+       width: 90%;
+       padding-left: 20px;
+       padding-top: 5px;
+    }
+    #belowlogotext{
+       width: 90%;
+       padding-left: 70px;
+       padding-top: 5px;
+       margin-top:10px;
+       font-size:20px;
+       color:#000;
+    }
+
+    .innercontainer {
+        width: 100%;
+        height: 450px;
+        background-color: #fff;
+        margin-left: 0px;
+        margin-top: 10px;
+        
+        
+    }
+    .innercontainergoogle {
+        width: 100%;
+        height: 300px;
+        background-color: #fff;
+        margin-left: 0px;
+        margin-top: 10px;
+        
+        
+    }
+
+    #collegeName{
+
+            width: 100%;
+            background-color: #e8f0fe;
+            margin-right: 7px;
+    }
+    #profession{
+
+            width: 100%;
+            background-color: #e8f0fe;
+            margin-right: 7px;
+    }
+    #community{
+
+            width: 100%;
+            background-color: #e8f0fe;
+            margin-right: 7px;
+    }
+    .innercontainergoogle {
+        width: 100%;
+        height: 300px;
+        background-color: #fff;
+        margin-left: 0px;
+        margin-top: 100px;
+        
+        
+    }
+
+
+    .uploadphoto{
+        margin-top: 10px;
+        border: 1px;
+        border-style: solid;
+        border-color: #aaa;
+        display: flex;
+        flex-direction: row;
+        cursor:pointer;
+        width:100%;
+        height:45px;
+        background-color:#fff;
+        margin-top:20px;
+        margin-left:0px;
+        justify-content: center;
+        
+    }
+    .photo{
+
+
+        width:40px;
+        height:40px;
+        background-color:#fff;
+        margin-left:5px;
+        /* margin-top:0px;
+        margin-left:0px; */
+    }
+
+    #googleloginimage{
+
+
+
+        width:30px;
+        height:30px;
+        margin-top:5px;
+        
+    }
+
+    .text{
+        /* margin-left:30px;
+        margin-top:10px; */
+        font-size:20px;
+    }
+
+
+    .outercontainer {
+        background-color: #fff;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        
+        overflow-x: hidden;
+    }
+
+    #registerForm {
+        margin-top: 0px;
+        padding-top: 25px;
+        /* justify-content: center; */
+        padding-left: 0px;
+        border-width: 0px;
+        border-style: none;
+       
+        border-radius: 20px;
+        border-style: none;
+        border-color: white;
+        width: 100%;
+        height: 450px;
+        font-size: 20px;
+        margin-left: 0px;
+        
+        box-shadow: 0px 0px 0px 0px #fff;
+    }
+    #registerFormgooglemiddlelogin {
+        margin-top: 0px;
+        padding-top: 25px;
+        /* justify-content: center; */
+        padding-left: 15px;
+        border-width: 0px;
+        border-style: none;
+       
+        border-radius: 20px;
+        border-style: none;
+        border-color: white;
+        width: 100%;
+        height: 450px;
+        font-size: 20px;
+        
+        box-shadow: 0px 0px 0px 0px #fff;
+    }
+
+    #registerpageForm {
+        margin-top: 0px;
+        padding-top: 0px;
+        /* padding-left: 20px;
+        padding-right: 20px; */
+        padding-right: 0px;
+        border-radius: 20px;
+        padding-left: 0px;
+        margin-right: 10px;
+        width: 100%;
+        height: 680px;
+        font-size: 20px;
+       border: none;
+        border-radius: 20px;
+        
+        
+    }
+        .form-control{
+            width: 100%;
+            height: 45px;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .form-select{
+            width: 90%;
+            height: 45px;
+            font-size: 20px;
+            background-color:#fff;
+            padding-left: 0px;
+            border-radius: 2px;
+            margin-bottom: 5px;
+    
+            }
+
+            #submit-btn{
+                width: 100%;
+                height: 45px;
+                font-size: 20px;
+                margin-top: 5px;
+                margin-right: 7px;
+            }
+            .registerinnercontainer {
+                width: 100%;
+                height: 700px;
+                background-color: #fff;
+                margin-left: 0px;
+                margin-top: 0px;
+            }
+
+            .logof{
+
+
+                width: 230px;
+                height: 150px;
+                     margin-left: 63px;
+            }
+
+            .textquestion{
+
+                margin-left: 38px;
+                margin-top:20px;
+            }
+            
+    
+}
+
+
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
