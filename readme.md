@@ -41,7 +41,7 @@ cd kquesto_
 **4.** Add a reference(remote) to the original repository.
 
 ```
-git remote add upstream https://github.com/RIKI-05/MOMOMIA.git 
+git remote add upstream https://github.com/noobhigodhai/kquesto_.git 
 ```
 
 **5.** Check the remotes for this repository.
@@ -76,6 +76,7 @@ npm install
 npm run dev
 ```
 This will start on port 80. 
+
 **9.** Track your changes:heavy_check_mark: .
 
 ```
