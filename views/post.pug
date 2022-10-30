@@ -30,6 +30,20 @@ block content
       .innerContainer(style="")
          .innerPostContainer(style="margin-top:40px;")
    
+      .outerContainer 
+      form#registerForm
+         .form-group
+            label(for='exampleInputEmail1') Post
+            input#text.form-control(type='text', aria-describedby='emailHelp', placeholder='Type something')
+            button.btn.btn-primary(type='submit' onclick="hemlo();") Post 
+      form#PostForm
+         .form-group
+            label(for='exampleInputEmail1') Post
+            input#text.form-control(type='file')
+            button.btn.btn-primary(type='submit' onclick="hemlo();") Post 
+      .innerContainer(style="")
+         .innerPostContainer(style="margin-top:40px;")
+   
    script.
       var cropper; 
       var form = document.getElementById("registerForm")
@@ -218,10 +232,16 @@ block content
                      </div>
                  </div>`;
       } 
+      
+
+
+
+
       function myFunction() { 
-         $(".modal").modal("show");
-      console.log("hemloes")
+          $(".modal").modal("show");
+      console.log("hemloes");
       }
+
 
       $("#imagepost").change(function(){ 
            
